@@ -13,6 +13,8 @@ function ask() {
             if(result != 0) {   
                 console.log(decode(result));   
                 ask();
+            } else {
+                process.exit(0);
             }
         }
     );
