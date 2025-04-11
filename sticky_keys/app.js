@@ -1,31 +1,9 @@
-const readline = require("readline");
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
 
-ask();
-
-function ask() {
-    let originalText = "";
-    rl.question(
-        "Enter the original text or enter 0 to exit\n",
-        (original) => {
-            if(original != '0') {
-                originalText = original;
-                rl.question(
-                    "Enter the typed text\n",
-                    (typed) => {
-                        console.log(isLongPressed(originalText, typed));
-                        ask();
-                    }
-                );
-            } else {
-                process.exit(0);
-            }
-        }
-    );
-}
+console.log(isLongPressed("alex", "aaleex"))
+console.log(isLongPressed("saeed", "ssaaedd"))
+console.log(isLongPressed("leelee", "lleeelee"))
+console.log(isLongPressed("Tokyo", "TTokkyoh"))
+console.log(isLongPressed("laiden", "laiden"))
 
 function isLongPressed(original, typed) {
     for (var i = 0; i < original.length; i++)
